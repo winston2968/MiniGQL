@@ -1,0 +1,62 @@
+# dune runtest
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/axel/.cache/dune/db
+# Workspace root: /Users/axel/Documents/Caml/MiniGQL/Project
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/axel/.opam/default/bin/ocamlc.opt -config > /var/folders/l6/74d2zzv944jg2zy2c9nmdwfr0000gn/T/dune_b002b2_output
+$ (cd _build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test && /bin/sh /var/folders/l6/74d2zzv944jg2zy2c9nmdwfr0000gn/T/dune_cram_dfb22a_.tiny.t/main.sh)
+$ (cd _build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test && /bin/sh /var/folders/l6/74d2zzv944jg2zy2c9nmdwfr0000gn/T/dune_cram_b4f7c6_.entreprise.t/main.sh)
+$ /usr/bin/git --no-pager diff --no-index --color=always -u _build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test/entreprise.t _build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test/entreprise.t.corrected
+> diff --git a/_build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test/entreprise.t b/_build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test/entreprise.t.corrected
+> index 9ca42b8..2ab1476 100644
+> --- a/_build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test/entreprise.t
+> +++ b/_build/.sandbox/412c68e310599707570bb02e3bf68ba2/default/test/entreprise.t.corrected
+> @@ -1,22 +1,3 @@
+>    $ dune exec Code_GraphDB f entreprise.q
+> -  (Graphstruct.DBG (
+> -     [(Graphstruct.DBN (3,
+> -         ("E",
+> -          [("pme", (Lang.BoolV true)); ("nom", (Lang.StringV "Petit Pain"))])
+> -         ));
+> -       (Graphstruct.DBN (2,
+> -          ("P",
+> -           [("age", (Lang.IntV 24)); ("nom", (Lang.StringV "Pierre Dupont"))])
+> -          ));
+> -       (Graphstruct.DBN (1,
+> -          ("E", [("pme", (Lang.BoolV false)); ("nom", (Lang.StringV "Airbus"))])
+> -          ));
+> -       (Graphstruct.DBN (0,
+> -          ("P",
+> -           [("age", (Lang.IntV 25)); ("nom", (Lang.StringV "Marie Dubois"))])
+> -          ))
+> -       ],
+> -     [(Graphstruct.DBR (0, "ami", 2)); (Graphstruct.DBR (3, "f", 1));
+> -       (Graphstruct.DBR (2, "emp", 3)); (Graphstruct.DBR (0, "emp", 1))]
+> -     ))
+> -  (Sem.Table (["p"; "e"], [[2; 3]]))
+> +  Error: Program 'Code_GraphDB' not found!
+> +  [1]
+[1]
+$ /usr/bin/git --no-pager diff --no-index --color=always -u _build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test/tiny.t _build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test/tiny.t.corrected
+> diff --git a/_build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test/tiny.t b/_build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test/tiny.t.corrected
+> index d77b2ed..f665606 100644
+> --- a/_build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test/tiny.t
+> +++ b/_build/.sandbox/0723d6950d313ca95470b74eb967cfee/default/test/tiny.t.corrected
+> @@ -1 +1,3 @@
+> -  $ dune exec Code_GraphDB f tiny.q
+> \ No newline at end of file
+> +  $ dune exec Code_GraphDB f tiny.q
+> +  Error: Program 'Code_GraphDB' not found!
+> +  [1]
+[1]
+$ (cd _build/default/test && ./test_Proj_GraphDB.exe)

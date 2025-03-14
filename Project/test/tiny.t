@@ -1,1 +1,0 @@
-  $ dune exec Code_GraphDB f tiny.q

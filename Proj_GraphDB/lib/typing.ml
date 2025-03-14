@@ -10,7 +10,6 @@ let initial_result gt = Result.Ok (initial_environment gt)
 exception FieldAccError of string
 exception TypeError of string
 
-
 type tc_result = (environment, string list) result
 
 (* Functions for manipulating the environment *)
@@ -23,8 +22,26 @@ let remove_var vn env =
 
 (* TODO: add more auxiliary functions here *)
 
+let test_types = DBG ([( DBN ("P", [("nom", Lang. StringT ); ("age", Lang.IntT )]));
+                (DBN ("E", [("nom", Lang. StringT ); ("pme", Lang.BoolT )]))] ,
+                [( DBR ("P", "ami", "P"));
+                (DBR ("P", "emp", "E"));
+                (DBR ("E", "f", "E"))])
+
+let rec no_duplicate = function
+  | [] -> true
+  | x::r -> not (List.mem x r) && no_duplicate r
+
+let verif_unicite_types ntdecls = 
+  no_duplicate (List.map (function (DBN (n,_)) -> n) ntdecls) 
+
+
 (* TODO: fill in details *)
-let check_graph_types (DBG (ntdecls, rtdecls)) = Result.Ok ()
+let check_graph_types (DBG (ntdecls, rtdecls)) = 
+  if verif_unicite_types ntdecls 
+    then Result.Ok()
+  else Result.Error "duplicates"
+
 
 (* TODO: fill in details *)
 let rec tp_expr env = function

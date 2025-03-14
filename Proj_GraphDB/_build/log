@@ -1,0 +1,146 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/axel/.cache/dune/db
+# Workspace root: /Users/axel/Documents/Caml/MiniGQL/Proj_GraphDB
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/axel/.opam/default/bin/ocamlc.opt -config > /var/folders/l6/74d2zzv944jg2zy2c9nmdwfr0000gn/T/dune_6fba65_output
+$ (cd _build/.sandbox/cddcafee2ae4925870eaeb7561ae9520/default && .ppx/0bb5094b13567c3c4e1ee33245b80e63/ppx.exe --cookie 'library-name="Proj_GraphDB"' -o lib/typing.pp.ml --impl lib/typing.ml -corrected-suffix .ppx-corrected -diff-cmd - -dump-ast)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamldep.opt -modules -impl lib/typing.pp.ml) > _build/default/lib/.Proj_GraphDB.objs/proj_GraphDB__Typing.impl.d
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -bin-annot -bin-annot-occurrences -I lib/.Proj_GraphDB.objs/byte -I /Users/axel/.opam/default/lib/ocamlgraph -I /Users/axel/.opam/default/lib/ppx_deriving -I /Users/axel/.opam/default/lib/ppx_deriving/runtime -I /Users/axel/.opam/default/lib/stdlib-shims -no-alias-deps -opaque -open Proj_GraphDB -o lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Typing.cmo -c -impl lib/typing.pp.ml)
+> File "lib/typing.ml", line 40, characters 37-44:
+> 40 | let check_graph_types (DBG (ntdecls, rtdecls)) = 
+>                                           ^^^^^^^
+> Warning 27 [unused-var-strict]: unused variable rtdecls.
+>
+> File "lib/typing.ml", line 48, characters 8-9:
+> 48 |   Const v -> IntT
+>              ^
+> Warning 27 [unused-var-strict]: unused variable v.
+>
+> File "lib/typing.ml", line 49, characters 13-15:
+> 49 | | AttribAcc (vn, fn) -> IntT
+>                   ^^
+> Warning 27 [unused-var-strict]: unused variable vn.
+>
+> File "lib/typing.ml", line 49, characters 17-19:
+> 49 | | AttribAcc (vn, fn) -> IntT
+>                       ^^
+> Warning 27 [unused-var-strict]: unused variable fn.
+>
+> File "lib/typing.ml", line 50, characters 9-12:
+> 50 | | BinOp (bop, e1, e2) -> tp_expr env e1
+>               ^^^
+> Warning 27 [unused-var-strict]: unused variable bop.
+>
+> File "lib/typing.ml", line 50, characters 18-20:
+> 50 | | BinOp (bop, e1, e2) -> tp_expr env e1
+>                        ^^
+> Warning 27 [unused-var-strict]: unused variable e2.
+>
+> File "lib/typing.ml", line 63, characters 31-34:
+> 63 | let tc_instr (i: instruction) (env: environment) : tc_result = 
+>                                     ^^^
+> Warning 27 [unused-var-strict]: unused variable env.
+>
+> File "lib/typing.ml", line 65, characters 22-24:
+> 65 |   | IActOnNode (_act, vn, lb) -> Result.Error ["not yet implemented"]
+>                            ^^
+> Warning 27 [unused-var-strict]: unused variable vn.
+>
+> File "lib/typing.ml", line 65, characters 26-28:
+> 65 |   | IActOnNode (_act, vn, lb) -> Result.Error ["not yet implemented"]
+>                                ^^
+> Warning 27 [unused-var-strict]: unused variable lb.
+>
+> File "lib/typing.ml", line 76, characters 27-35:
+> 76 | let typecheck_instructions continue gt instrs np = 
+>                                 ^^^^^^^^
+> Warning 27 [unused-var-strict]: unused variable continue.
+>
+> File "lib/typing.ml", line 76, characters 36-38:
+> 76 | let typecheck_instructions continue gt instrs np = 
+>                                          ^^
+> Warning 27 [unused-var-strict]: unused variable gt.
+>
+> File "lib/typing.ml", line 76, characters 39-45:
+> 76 | let typecheck_instructions continue gt instrs np = 
+>                                             ^^^^^^
+> Warning 27 [unused-var-strict]: unused variable instrs.
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -bin-annot -bin-annot-occurrences -I lib/.Proj_GraphDB.objs/byte -I /Users/axel/.opam/default/lib/ocamlgraph -I /Users/axel/.opam/default/lib/ppx_deriving -I /Users/axel/.opam/default/lib/ppx_deriving/runtime -I /Users/axel/.opam/default/lib/stdlib-shims -no-alias-deps -opaque -open Proj_GraphDB -o lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Interf.cmo -c -impl lib/interf.pp.ml)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -a -o lib/Proj_GraphDB.cma lib/.Proj_GraphDB.objs/byte/proj_GraphDB.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Graphstruct.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Lang.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Instr.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Typing.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Sem.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Parser.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Lexer.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Display.cmo lib/.Proj_GraphDB.objs/byte/proj_GraphDB__Interf.cmo)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32 -g -bin-annot -bin-annot-occurrences -I bin/.main.eobjs/byte -I /Users/axel/.opam/default/lib/ocamlgraph -I /Users/axel/.opam/default/lib/ppx_deriving -I /Users/axel/.opam/default/lib/ppx_deriving/runtime -I /Users/axel/.opam/default/lib/stdlib-shims -I lib/.Proj_GraphDB.objs/byte -no-alias-deps -opaque -o bin/.main.eobjs/byte/dune__exe__Main.cmi -c -intf bin/main.mli)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I /Users/axel/.opam/default/lib/ocamlgraph -I /Users/axel/.opam/default/lib/ppx_deriving -I /Users/axel/.opam/default/lib/ppx_deriving/runtime -I /Users/axel/.opam/default/lib/stdlib-shims -I lib/.Proj_GraphDB.objs/byte -I lib/.Proj_GraphDB.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -I lib/.Proj_GraphDB.objs/byte -I lib/.Proj_GraphDB.objs/native -I /Users/axel/.opam/default/lib/ocamlgraph -I /Users/axel/.opam/default/lib/ppx_deriving -I /Users/axel/.opam/default/lib/ppx_deriving/runtime -I /Users/axel/.opam/default/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -open Proj_GraphDB -o lib/.Proj_GraphDB.objs/native/proj_GraphDB__Interf.cmx -c -impl lib/interf.pp.ml)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -I lib/.Proj_GraphDB.objs/byte -I lib/.Proj_GraphDB.objs/native -I /Users/axel/.opam/default/lib/ocamlgraph -I /Users/axel/.opam/default/lib/ppx_deriving -I /Users/axel/.opam/default/lib/ppx_deriving/runtime -I /Users/axel/.opam/default/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -open Proj_GraphDB -o lib/.Proj_GraphDB.objs/native/proj_GraphDB__Typing.cmx -c -impl lib/typing.pp.ml)
+> File "lib/typing.ml", line 40, characters 37-44:
+> 40 | let check_graph_types (DBG (ntdecls, rtdecls)) = 
+>                                           ^^^^^^^
+> Warning 27 [unused-var-strict]: unused variable rtdecls.
+>
+> File "lib/typing.ml", line 48, characters 8-9:
+> 48 |   Const v -> IntT
+>              ^
+> Warning 27 [unused-var-strict]: unused variable v.
+>
+> File "lib/typing.ml", line 49, characters 13-15:
+> 49 | | AttribAcc (vn, fn) -> IntT
+>                   ^^
+> Warning 27 [unused-var-strict]: unused variable vn.
+>
+> File "lib/typing.ml", line 49, characters 17-19:
+> 49 | | AttribAcc (vn, fn) -> IntT
+>                       ^^
+> Warning 27 [unused-var-strict]: unused variable fn.
+>
+> File "lib/typing.ml", line 50, characters 9-12:
+> 50 | | BinOp (bop, e1, e2) -> tp_expr env e1
+>               ^^^
+> Warning 27 [unused-var-strict]: unused variable bop.
+>
+> File "lib/typing.ml", line 50, characters 18-20:
+> 50 | | BinOp (bop, e1, e2) -> tp_expr env e1
+>                        ^^
+> Warning 27 [unused-var-strict]: unused variable e2.
+>
+> File "lib/typing.ml", line 63, characters 31-34:
+> 63 | let tc_instr (i: instruction) (env: environment) : tc_result = 
+>                                     ^^^
+> Warning 27 [unused-var-strict]: unused variable env.
+>
+> File "lib/typing.ml", line 65, characters 22-24:
+> 65 |   | IActOnNode (_act, vn, lb) -> Result.Error ["not yet implemented"]
+>                            ^^
+> Warning 27 [unused-var-strict]: unused variable vn.
+>
+> File "lib/typing.ml", line 65, characters 26-28:
+> 65 |   | IActOnNode (_act, vn, lb) -> Result.Error ["not yet implemented"]
+>                                ^^
+> Warning 27 [unused-var-strict]: unused variable lb.
+>
+> File "lib/typing.ml", line 76, characters 27-35:
+> 76 | let typecheck_instructions continue gt instrs np = 
+>                                 ^^^^^^^^
+> Warning 27 [unused-var-strict]: unused variable continue.
+>
+> File "lib/typing.ml", line 76, characters 36-38:
+> 76 | let typecheck_instructions continue gt instrs np = 
+>                                          ^^
+> Warning 27 [unused-var-strict]: unused variable gt.
+>
+> File "lib/typing.ml", line 76, characters 39-45:
+> 76 | let typecheck_instructions continue gt instrs np = 
+>                                             ^^^^^^
+> Warning 27 [unused-var-strict]: unused variable instrs.
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -a -o lib/Proj_GraphDB.cmxa lib/.Proj_GraphDB.objs/native/proj_GraphDB.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Graphstruct.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Lang.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Instr.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Typing.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Sem.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Parser.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Lexer.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Display.cmx lib/.Proj_GraphDB.objs/native/proj_GraphDB__Interf.cmx)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32-39 -g -shared -linkall -I lib -o lib/Proj_GraphDB.cmxs lib/Proj_GraphDB.cmxa)
+$ (cd _build/default && /Users/axel/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -8-27-32 -g -o bin/main.exe /Users/axel/.opam/default/lib/stdlib-shims/stdlib_shims.cmxa /Users/axel/.opam/default/lib/ocamlgraph/graph.cmxa /Users/axel/.opam/default/lib/ppx_deriving/runtime/ppx_deriving_runtime.cmxa lib/Proj_GraphDB.cmxa bin/.main.eobjs/native/dune__exe__Main.cmx)

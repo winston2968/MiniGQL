@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/Proj_GraphDB/META"
+  "_build/install/default/lib/Proj_GraphDB/dune-package"
+  "_build/install/default/lib/Proj_GraphDB/opam"
+]
+bin: [
+  "_build/install/default/bin/Proj_GraphDB"
+]

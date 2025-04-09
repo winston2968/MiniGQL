@@ -1,0 +1,34 @@
+
+** Conflict (reduce/reduce) in state 40.
+** Tokens involved: SET RPAREN MATCH EOF CREATE COMMA
+** The following explanations concentrate on token SET.
+** This state is reached from main after reading:
+
+list(tpDecl) SET IDENTIFIER DOT IDENTIFIER EQ STRINGCONSTANT
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+main 
+prog EOF 
+list(tpDecl) query 
+             list(clause) 
+             clause list(clause) // lookahead token appears because list(clause) can begin with SET
+             SET loption(separated_nonempty_list(COMMA,update)) // lookahead token is inherited
+                 separated_nonempty_list(COMMA,update) // lookahead token is inherited
+                 update // lookahead token is inherited
+                 IDENTIFIER DOT IDENTIFIER EQ expr // lookahead token is inherited
+                                              (?)
+
+** In state 40, looking ahead at SET, reducing production
+** expr -> STRINGCONSTANT
+** is permitted because of the following sub-derivation:
+
+STRINGCONSTANT . 
+
+** In state 40, looking ahead at SET, reducing production
+** primary_expr -> STRINGCONSTANT
+** is permitted because of the following sub-derivation:
+
+primary_expr // lookahead token is inherited
+STRINGCONSTANT . 

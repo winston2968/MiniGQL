@@ -1,4 +1,3 @@
-
 %token <string> IDENTIFIER
 %token <Lang.attrib_tp> TP
 %token <bool> BCONSTANT
@@ -40,6 +39,11 @@ query: cls = list(clause) { Query cls }
 /* TODO: to be completed */
 clause: 
 | CREATE; pts = separated_list(COMMA, pattern) { Create pts }
+| SET; updates = separated_list(COMMA, update) { Set updates }
+| MATCH; pts = separated_list(COMMA, pattern) { Match pts }
+
+update: 
+    | vn = IDENTIFIER; DOT; fn = IDENTIFIER; EQ; e = expr { (vn,fn, e) }
 
 
 /* TODO: to be completed */
@@ -59,20 +63,20 @@ npattern:
 
 primary_expr:
 | vn = IDENTIFIER; DOT; fn = IDENTIFIER 
-     { AttribAcc(vn, fn) }
+    { AttribAcc(vn, fn) }
 | c = BCONSTANT
-     { Const(BoolV(c)) }
+    { Const(BoolV(c)) }
 | c = INTCONSTANT
-     { Const(IntV(c)) }
+    { Const(IntV(c)) }
 | c = STRINGCONSTANT
-     { Const(StringV(c)) }
+    { Const(StringV(c)) }
 | LPAREN e = expr RPAREN
-     { e }
+    { e }
 
 /* TODO: to be completed */
 expr:
-| a = primary_expr { a }
-
+    | a = primary_expr { a }
+    | c = STRINGCONSTANT { Const(StringV(c)) }
 
 /* Types */
 nodeTpDecl: LPAREN; COLON; i = IDENTIFIER; a = attrib_declList; RPAREN  { DBN (i, a) }
